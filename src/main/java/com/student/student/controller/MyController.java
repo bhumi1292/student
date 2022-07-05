@@ -9,8 +9,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 public class MyController {
@@ -26,10 +28,13 @@ public class MyController {
     // get the courses
     @GetMapping("/courses")
     public List<Courses> getCourses(){
-    return this.corservice.getCourses();
+
+        return this.corservice.getCourses();
     }
 
     //get course with id
+
+
     @GetMapping("/courses/{courseId}")
     public Courses getCourses(@PathVariable String courseId){
         return this.corservice.getCourses(Long.parseLong(courseId));
