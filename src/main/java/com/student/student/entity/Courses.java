@@ -4,7 +4,9 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name = "Student")
 @Entity
 public class Courses
 {
